@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdh4cadat4w5m"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_gehd6"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_lssy0"]
+[ext_resource type="PackedScene" uid="uid://oh4ywst71rrv" path="res://gun.tscn" id="3_wnapg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8008"]
+radius = 36.2215
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7m7f"]
+radius = 43.0116
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lparc"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ra1l7"]
+bg_color = Color(0, 1, 0.172549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gehd6")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_lssy0")]
+unique_name_in_owner = true
+position = Vector2(1, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 21)
+shape = SubResource("CircleShape2D_e8008")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_wnapg")]
+position = Vector2(-32, 9)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(1, 22)
+shape = SubResource("CircleShape2D_l7m7f")
+debug_color = Color(0.960784, 0.156863, 0.329412, 0.419608)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -92.0
+offset_top = -113.0
+offset_right = 94.0
+offset_bottom = -86.0
+theme_override_styles/background = SubResource("StyleBoxFlat_lparc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ra1l7")
+value = 100.0
+show_percentage = false
