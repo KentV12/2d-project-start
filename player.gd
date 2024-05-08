@@ -22,3 +22,7 @@ func _physics_process(delta): # the update function
 		%HealthBar.value = health
 		if health <= 0.0:
 			health_depleted.emit() # send a signal to Game node and pause game
+
+
+func _on_upgrade_body_entered(body):
+	print("collision detected")

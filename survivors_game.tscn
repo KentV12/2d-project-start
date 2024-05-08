@@ -95,3 +95,4 @@ position = Vector2(267, 503)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Upgrade" to="Player" method="_on_upgrade_body_entered"]
