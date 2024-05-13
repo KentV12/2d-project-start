@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8qls2eganbft"]
+[gd_scene load_steps=6 format=3 uid="uid://c8qls2eganbft"]
 
 [ext_resource type="PackedScene" uid="uid://cdh4cadat4w5m" path="res://player.tscn" id="1_04oof"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_ragcj"]
 [ext_resource type="PackedScene" uid="uid://cgxiyc21qa7xu" path="res://pine_tree.tscn" id="2_lrlaf"]
 [ext_resource type="PackedScene" uid="uid://brd35w0ftaw01" path="res://upgrade.tscn" id="4_n64fo"]
-[ext_resource type="PackedScene" uid="uid://rwoc7illc7eg" path="res://energy_ball.tscn" id="5_qvhj4"]
 
 [sub_resource type="Curve2D" id="Curve2D_tttno"]
 _data = {
@@ -27,9 +26,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_04oof")]
 position = Vector2(1020, 435)
-
-[node name="energy_ball" parent="Player" instance=ExtResource("5_qvhj4")]
-position = Vector2(-746, -184)
 
 [node name="Path2D" type="Path2D" parent="Player"]
 position = Vector2(-1020, -435)

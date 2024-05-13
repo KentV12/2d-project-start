@@ -25,7 +25,6 @@ func _physics_process(delta): # the update function
 
 func upgraded():
 	print("upgrading...")
-	const ENERGY_BALL = preload("res://upgrade.tscn")
+	const ENERGY_BALL = preload("res://energy_ball.tscn")
 	var energy_ball = ENERGY_BALL.instantiate()
-	energy_ball.global_position = %HappyBoo.global_position
-	%HappyBoo.add_child(energy_ball)
+	add_child(energy_ball)
